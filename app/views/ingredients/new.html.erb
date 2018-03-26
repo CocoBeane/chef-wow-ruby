@@ -1,0 +1,8 @@
+<h1>Ingredients#create</h1>
+<p>Find me in app/views/ingredients/create.html.erb</p>
+<%= form_for @ingredient, url: {action: "create"}, html: {class: "ingredients_form"} do |field| %>
+  <%= field.text_field :name %>
+  <%= field.text_field :image_url %>
+  <%= field.text_area :description, size: "60x12" %>
+  <%= field.submit "Create" %>
+<% end %>
