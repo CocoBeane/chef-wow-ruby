@@ -1,0 +1,9 @@
+Index!
+
+  <% @ingredients.each do |ingredient| %>
+    <ul>
+      <li><%= ingredient.name %></li>
+      <li><img src="<%= ingredient.image_url %>"></li>
+      <li><%= ingredient.description %></li>
+    </ul>
+  <% end %>

@@ -8,6 +8,10 @@ class IngredientsController < ApplicationController
     @ingredient.save
   end
 
+  def index
+    @ingredients = Ingredient.all 
+  end
+
   private
 
   def ingredient_params
