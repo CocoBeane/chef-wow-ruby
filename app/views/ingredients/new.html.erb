@@ -1,14 +1,16 @@
 <h1>Create New Ingredient</h1>
 
-<%= form_for @ingredient, url: {action: "create"}, html: {class: "ingredients_form"} do |field| %>
+<%= form_for @ingredient, url: {action: "create"}, html: {class: "form"} do |field| %>
   <div class="form-group row">
-    <label>Name: </label> <%= field.text_field :name %>
+    <label for="ingredient_name">Name:</label> <%= field.text_field :name, class: "form-control" %>
   </div>
    <div class="form-group row"> 
-    <label>Image URL: </label> <%= field.text_field :image_url %>
+    <label for="ingredient_image_url">Image URL:</label> <%= field.text_field :image_url, class: "form-control" %>
   </div>
   <div class="form-group row">
-    <label>Description: </label> <%= field.text_area :description, size: "60x12" %>
+    <label for="ingredient_description">Description:</label> <%= field.text_area :description, size: "60x12", class: "form-control" %>
   </div>
-  <%= field.submit "Create" %>
+  <div class="form-group row"> 
+    <%= field.submit "Create", class: "btn btn-primary" %>
+  </div>
 <% end %>
