@@ -1,0 +1,5 @@
+<h1>Create a Recipe</h1>
+<%= form_for @recipe, url: {action: "create"}, html: {class: "recipe_form"} do |field| %>
+  <%= field.text_field :name %>
+  <%= field.submit "Create" %>
+<% end %>

@@ -548,3 +548,5 @@ Migrating to CreateRecipeIngredientJoins (20180416195352)
             FROM sqlite_temp_master
             WHERE name='index_recipe_ingredient_joins_on_recipe_id' AND type='index'
 [0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT ?[0m  [["LIMIT", 11]]
