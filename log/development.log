@@ -550,3 +550,428 @@ Migrating to CreateRecipeIngredientJoins (20180416195352)
 [0m
   [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 14:50:36 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 367ms (Views: 348.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 14:52:11 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 74ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 14:56:36 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (124.3ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `select_tag' for #<ActionView::Helpers::FormBuilder:0x00007fb7db28eef8>
+Did you mean?  select):
+    1: <h1>Create a Recipe</h1>
+    2: <%= form_for @recipe, url: {action: "create"}, html: {class: "recipe_form"} do |field| %>
+    3:   <%= field.text_field :name %>
+    4:   <%= field.select_tag("ingredients", option_tags = "<option>1</option><option>2</option><option>3</option><option>4</option>", options = {multiple: true}) %>
+    5:   <%= field.submit "Create" %>
+    6: <% end %>
+  
+app/views/recipes/new.html.erb:4:in `block in _app_views_recipes_new_html_erb__1868475557255461223_70213816238260'
+app/views/recipes/new.html.erb:2:in `_app_views_recipes_new_html_erb__1868475557255461223_70213816238260'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 14:57:21 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 55ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 14:59:58 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:00:11 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 76ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:01:29 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 56ms (Views: 53.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:02:21 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:07:22 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 58ms (Views: 48.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:08:28 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 50ms (Views: 40.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/recipes/create" for 127.0.0.1 at 2018-04-24 15:09:07 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fpJqGTFsXuPHn9Nr9Axih5Kl7Wz7pyLN51yCm5Msc6gh+CsHvsvg/VOk8g6WnEKMlCmHQsZFUNjdV8Mj+OE8KQ==", "recipe"=>{"name"=>"test", "ingredients"=>["", "Apples", "Flour"]}, "commit"=>"Create"}
+Unpermitted parameter: :ingredients
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test"], ["created_at", "2018-04-24 20:09:07.734711"], ["updated_at", "2018-04-24 20:09:07.734711"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+No template found for RecipesController#create, rendering head :no_content
+Completed 204 No Content in 53ms (ActiveRecord: 1.1ms)
+
+
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredient_joins" ON "ingredients"."id" = "recipe_ingredient_joins"."ingredient_id" WHERE "recipe_ingredient_joins"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 3], ["LIMIT", 11]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "testtest"], ["created_at", "2018-04-24 20:13:42.072430"], ["updated_at", "2018-04-24 20:13:42.072430"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "recipe_ingredient_joins" ("recipe_id", "ingredient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 4], ["ingredient_id", 1], ["created_at", "2018-04-24 20:13:42.074529"], ["updated_at", "2018-04-24 20:13:42.074529"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredient_joins" ON "ingredients"."id" = "recipe_ingredient_joins"."ingredient_id" WHERE "recipe_ingredient_joins"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 4], ["LIMIT", 11]]
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:15:20 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 59ms (Views: 49.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/recipes/create" for 127.0.0.1 at 2018-04-24 15:15:30 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AxDtpNI/BBEaIo9ce0ygFJvtP+CmZFQYd+PJE4lPMzNceqy6XZi6D44ZrjkZ3IAfnWFVzpuGJg1N6Iir4oJ8sg==", "recipe"=>{"name"=>"test2", "ingredients"=>["", "Apples"]}, "commit"=>"Create"}
+Unpermitted parameter: :ingredients
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:16:40 -0500
+Unpermitted parameter: :ingredients
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test2"], ["created_at", "2018-04-24 20:17:14.111318"], ["updated_at", "2018-04-24 20:17:14.111318"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+No template found for RecipesController#create, rendering head :no_content
+Completed 204 No Content in 103680ms (ActiveRecord: 3.1ms)
+
+
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 55ms (Views: 44.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:17:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 268ms (Views: 250.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/recipes/create" for 127.0.0.1 at 2018-04-24 15:17:29 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W8NA0tgs4KjGwt+th4No4HcPLhZuXUhphoT/HHOYTecEqQHMV4tetlL5/sjlE0jrcYNEOFO/Ony8j76kGFUCZg==", "recipe"=>{"name"=>"test2", "ingredients"=>["", "Apples"]}, "commit"=>"Create"}
+Unpermitted parameter: :ingredients
+Unpermitted parameter: :ingredients
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test2"], ["created_at", "2018-04-24 20:18:25.599617"], ["updated_at", "2018-04-24 20:18:25.599617"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+No template found for RecipesController#create, rendering head :no_content
+Completed 204 No Content in 55787ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:18:54 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 257ms (Views: 241.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/recipes/create" for 127.0.0.1 at 2018-04-24 15:19:00 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R+G8pkXT+9+sPESO2Z5sLk6nsHzFrlRds5SvAHBLzogYi/24ynRFwTgHZeu7DkwlSCvaUvhMJkiJn+64G4aBCQ==", "recipe"=>{"name"=>"test2", "ingredient_ids"=>["", "Apples"]}, "commit"=>"Create"}
+Unpermitted parameter: :ingredient_ids
+Unpermitted parameter: :ingredient_ids
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test2"], ["created_at", "2018-04-24 20:26:02.431271"], ["updated_at", "2018-04-24 20:26:02.431271"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+No template found for RecipesController#create, rendering head :no_content
+Completed 204 No Content in 422123ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-24 15:26:07 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ingredients"."name" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 60ms (Views: 43.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/recipes/create" for 127.0.0.1 at 2018-04-24 15:26:25 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SpJQ4nL17vx0uFi/7zjwsqBzAr7Z3z2Aouwbo8l21WMV+BH8/VJQ4uCDedqNqNC5pv9okOQ9T5WY51oborua4g==", "recipe"=>{"name"=>"test3", "ingredient_ids"=>["", "Apples"]}, "commit"=>"Create"}
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = 0[0m
+Completed 404 Not Found in 3892182ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Ingredient with 'id'=[0]):
+  
+app/controllers/recipes_controller.rb:8:in `create'
+Started GET "/ingredients/" for 127.0.0.1 at 2018-04-30 14:07:19 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IngredientsController#index as HTML
+  Rendering ingredients/index.html.erb within layouts/application
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered ingredients/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 294ms (Views: 279.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ingredients/blah" for 127.0.0.1 at 2018-04-30 14:07:19 -0500
+Processing by IngredientsController#show as HTML
+  Parameters: {"id"=>"blah"}
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Ingredient with 'id'=blah):
+  
+app/controllers/ingredients_controller.rb:16:in `show'
+Started GET "/ingredients/blah" for 127.0.0.1 at 2018-04-30 14:07:20 -0500
+Processing by IngredientsController#show as HTML
+  Parameters: {"id"=>"blah"}
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Ingredient with 'id'=blah):
+  
+app/controllers/ingredients_controller.rb:16:in `show'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-30 14:07:24 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ingredients"."name", "ingredients"."id" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 71ms (Views: 63.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/recipes/create" for 127.0.0.1 at 2018-04-30 14:07:36 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n7MqpsFjWI/rZlnS2ayjfEjXmrNhXfagWTn+QN5BUrihXRiUwXoriPsnoCmEGWuO6wX0bZ8vlUQkFyvK+Z7MAQ==", "recipe"=>{"name"=>"Name", "ingredients"=>["", "1"]}, "commit"=>"Create"}
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-30 14:29:46 -0500
+Completed 500 Internal Server Error in 1343576ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Ingredient(#70336856450840) expected, got "" which is an instance of String(#70336804986640)):
+  
+app/controllers/recipes_controller.rb:8:in `create'
+Processing by RecipesController#new as HTML
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-30 14:29:59 -0500
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name", "ingredients"."id" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 55ms (Views: 46.3ms | ActiveRecord: 1.1ms)
+
+
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name", "ingredients"."id" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 52ms (Views: 43.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-30 14:30:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name", "ingredients"."id" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 265ms (Views: 250.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/recipes/create" for 127.0.0.1 at 2018-04-30 14:30:47 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DawGbcH3uplo+c1dMJYFR/4ZwuXl4lmpIHmqfbnAiKszQjRfwe7Jnni4NKZtI821XcusOxuQOk1dV3/3nh8WEg==", "recipe"=>{"name"=>"Name2", "ingredients"=>["", "1"]}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `creation_params' for #<RecipesController:0x00007fe163bc4818>):
+  
+app/controllers/recipes_controller.rb:7:in `create'
+Started GET "/recipes/create" for 127.0.0.1 at 2018-04-30 14:33:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/recipes/create"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/recipes/" for 127.0.0.1 at 2018-04-30 14:33:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/recipes"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-04-30 14:33:43 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ingredients"."name", "ingredients"."id" FROM "ingredients"[0m
+  Rendered recipes/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 57ms (Views: 47.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/recipes/create" for 127.0.0.1 at 2018-04-30 14:33:51 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3lfkUGcQboZ9xdnPL9ruOPDf5Hnsdek76hxoGObwhpPgudZiZwkdgW2EIDRybybKUw2KpxIHit+XMr2SwS8YKg==", "recipe"=>{"name"=>"test123", "ingredients"=>["", "1"]}, "commit"=>"Create"}
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test123"], ["created_at", "2018-04-30 19:33:51.346793"], ["updated_at", "2018-04-30 19:33:51.346793"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "recipe_ingredient_joins" ("recipe_id", "ingredient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 8], ["ingredient_id", 1], ["created_at", "2018-04-30 19:33:51.348499"], ["updated_at", "2018-04-30 19:33:51.348499"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+No template found for RecipesController#create, rendering head :no_content
+Completed 204 No Content in 73ms (ActiveRecord: 2.3ms)
+
+
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredient_joins" ON "ingredients"."id" = "recipe_ingredient_joins"."ingredient_id" WHERE "recipe_ingredient_joins"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 8], ["LIMIT", 11]]
+Started GET "/recipes" for 127.0.0.1 at 2018-04-30 14:40:31 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 48ms (Views: 42.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2018-04-30 14:51:29 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/Users/cornelia/Desktop/dev/chef-wow-ruby/app/views/recipes/show.html.erb:5: syntax error, unexpected '<'
+    <li>ingredient.name</li>
+     ^
+/Users/cornelia/Desktop/dev/chef-wow-ruby/app/views/recipes/show.html.erb:7: unknown regexp option - l
+/Users/cornelia/Desktop/dev/chef-wow-ruby/app/views/recipes/show.html.erb:7: unterminated string meets end of file
+/Users/cornelia/Desktop/dev/chef-wow-ruby/app/views/recipes/show.html.erb:7: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/recipes/show.html.erb:5: syntax error, unexpected '<'
+app/views/recipes/show.html.erb:7: unknown regexp option - l
+app/views/recipes/show.html.erb:7: unterminated string meets end of file
+app/views/recipes/show.html.erb:7: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/recipes/1" for 127.0.0.1 at 2018-04-30 14:52:08 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredient_joins" ON "ingredients"."id" = "recipe_ingredient_joins"."ingredient_id" WHERE "recipe_ingredient_joins"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 62ms (Views: 59.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2018-04-30 14:52:45 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredient_joins" ON "ingredients"."id" = "recipe_ingredient_joins"."ingredient_id" WHERE "recipe_ingredient_joins"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2018-04-30 14:55:29 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredient_joins" ON "ingredients"."id" = "recipe_ingredient_joins"."ingredient_id" WHERE "recipe_ingredient_joins"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
