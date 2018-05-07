@@ -1,3 +1,10 @@
-<li><%= @ingredient.name %></li>
-<li><img src="<%= @ingredient.image_url %>"></li>
-<li><%= @ingredient.description %></li>
+<div class="container">
+  <div class="row">
+    <h1><%= @ingredient.name %></h1>
+    <div class="bg-light">
+      <img src="<%= @ingredient.image_url %>" class="img-fluid rounded show-page-img" alt="A picture of <%= @ingredient.name %>">
+      <p><%= @ingredient.description %></p>
+    </div>
+  </div>
+</div>
+<a href="/ingredients" class="float-left btn">< Back</a>
