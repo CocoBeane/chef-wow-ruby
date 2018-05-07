@@ -1,9 +1,34 @@
-Index!
+<main role="main">
 
-  <% @ingredients.each do |ingredient| %>
-    <ul>
-      <li><%= ingredient.name %></li>
-      <li><img src="<%= ingredient.image_url %>"></li>
-      <li><%= ingredient.description %></li>
-    </ul>
-  <% end %>
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">All Ingredients</h1>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="card-group">  
+          <% @ingredients.each do |ingredient| %>
+
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="<%= ingredient.image_url %>" alt="A picture of <%= ingredient.name %>">
+                <div class="card-body">
+                  <p class="card-text"><%= ingredient.name %></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="/ingredients/<%= ingredient.id %>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
