@@ -5,8 +5,12 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
-    @ingredient.save
-    redirect_to ingredient_path(@ingredient)
+    if @ingredient.save
+      flash[:success] = "Ingredient saved"
+      redirect_to ingredient_path(@ingredient)
+    else
+      flash.now[:error] = "Error! Ingredient not saved"
+    end
   end
 
   def index

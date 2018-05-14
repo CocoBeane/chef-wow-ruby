@@ -44,6 +44,11 @@
     <main role="main" class="container">
 
       <div class="page-content">
+
+        <% flash.each do |type, value| %>
+          <div class="alert alert-<%= type %>" role="alert"><%= value %></div>
+        <% end %>
+
         <%= yield %>
       </div>
 
