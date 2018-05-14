@@ -8,7 +8,12 @@ include RecipesHelper
 
   def create
     @recipe = Recipe.new(creation_params)
-    @recipe.save
+    if @recipe.save
+      flash[:success] = "Recipe saved"
+      redirect_to recipe_path(@recipe)
+    else
+      flash.now[:error] = "Error! Recipe not saved"
+    end
   end
 
   def index
