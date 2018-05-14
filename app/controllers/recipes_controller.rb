@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
 
 include RecipesHelper
+  def index
+    @recipes = Recipe.all 
+  end
 
   def new
     @recipe = Recipe.new
@@ -16,12 +19,23 @@ include RecipesHelper
     end
   end
 
-  def index
-    @recipes = Recipe.all 
-  end
-
   def show
     @recipe = Recipe.find(params[:id])
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(creation_params)
+      flash[:success] = "Recipe updated"
+      redirect_to recipe_path
+    else
+      flash.now[:error] = "Error! Recipe not saved"
+    end
   end
 
   private
