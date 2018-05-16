@@ -1,7 +1,33 @@
-<h1>Recipes</h1>
+<main role="main">
 
-<ul>
-  <% @recipes.each do |recipe| %>
-      <li><%= recipe.name %></li>
-  <% end %>
-</ul>
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">All Recipes</h1>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="card-group">  
+          <% @recipes.each do |recipe| %>
+
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= recipe.name %></h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="/ingredients/<%= recipe.id %>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

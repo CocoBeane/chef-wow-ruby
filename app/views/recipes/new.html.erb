@@ -1,6 +1,12 @@
 <h1>Create a Recipe</h1>
-<%= form_for @recipe, url: {action: "create"}, html: {class: "recipe_form"} do |field| %>
-  <%= field.text_field :name %>
-  <%= field.select(:ingredients, options_for_ingredients, {}, multiple: true) %>
-  <%= field.submit "Create" %>
+<%= form_for @recipe, url: {action: "create"}, html: {class: "form"} do |field| %>
+  <div class="form-group row">
+    <label for="ingredient_name">Name:</label> <%= field.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group row">
+    <label for="ingredient_name">Ingredients:</label> <%= field.select(:ingredients, options_for_ingredients, {}, multiple: true, class: "form-control") %>
+  </div>
+  <div class="form-group row">
+    <%= field.submit "Create" %>
+  </div>
 <% end %>
