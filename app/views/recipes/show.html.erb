@@ -13,3 +13,4 @@
 </div>
 <a href="/recipes" class="float-left btn">< Back</a>
 <a href="/recipes/<%= @recipe.id %>/edit" class="float-left btn">Edit</a>
+<%= link_to 'Destroy', recipe_path(@recipe), :method => :delete %>

@@ -38,6 +38,12 @@ include RecipesHelper
     end
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to recipes_path
+  end
+
   private
 
   def recipe_params
