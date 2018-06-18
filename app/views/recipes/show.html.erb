@@ -12,5 +12,5 @@
   </div>
 </div>
 <a href="/recipes" class="float-left btn">< Back</a>
-<a href="/recipes/<%= @recipe.id %>/edit" class="float-left btn">Edit</a>
-<%= link_to 'Destroy', recipe_path(@recipe), :method => :delete %>
+<%= link_to 'Delete', recipe_path(@recipe), :method => :delete, class: "float-right btn" %>
+<a href="/recipes/<%= @recipe.id %>/edit" class="float-right btn">Edit</a>

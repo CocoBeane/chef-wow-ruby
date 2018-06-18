@@ -8,6 +8,5 @@
   </div>
 </div>
 <a href="/ingredients" class="float-left btn">< Back</a>
-<a href="/ingredients/<%= @ingredient.id %>/edit" class="float-left btn">Edit</a>
-<%= link_to 'Destroy', ingredient_path(@ingredient), :method => :delete %>
-
+<%= link_to 'Delete', ingredient_path(@ingredient), :method => :delete, class: "float-right btn"%>
+<a href="/ingredients/<%= @ingredient.id %>/edit" class="float-right btn">Edit</a>
