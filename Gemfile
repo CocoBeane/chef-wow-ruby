@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'chosen-rails'
 
 group :production do
   gem 'pg', '0.20.0'

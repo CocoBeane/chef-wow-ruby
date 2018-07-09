@@ -2,10 +2,10 @@
 
 <%= form_for @recipe, url: {action: "create"}, html: {class: "form"} do |field| %>
   <div class="form-group row">
-    <label for="ingredient_name">Name:</label> <%= field.text_field :name, class: "form-control" %>
+    <label for="recipe_name">Name:</label> <%= field.text_field :name, class: "form-control" %>
   </div>
   <div class="form-group row">
-    <label for="ingredient_name">Ingredients:</label> <%= field.select(:ingredients, options_for_ingredients, {}, multiple: true, class: "form-control") %>
+    <label for="ingredients">Ingredients:</label> <%= field.select(:ingredients, options_for_ingredients, {}, multiple: true, class: "form-control chosen") %>
   </div>
   <div class="form-group row">
     <%= field.submit "Create" %>
