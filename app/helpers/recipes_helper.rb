@@ -4,7 +4,7 @@ module RecipesHelper
     Ingredient.all.pluck(:name, :id)
   end
 
-  def selected_recipe_ingredients ######
+  def selected_recipe_ingredients
     @recipe.ingredients.pluck(:id)
   end
 

@@ -4,9 +4,22 @@
   <div class="form-group row">
     <label for="recipe_name">Name:</label> <%= field.text_field :name, class: "form-control" %>
   </div>
+
+  <h3>Ingredients</h3>
   <div class="form-group row">
-    <label for="ingredients">Ingredients:</label> <%= field.select(:ingredients, options_for_ingredients, {}, multiple: true, class: "form-control chosen") %>
+
+      <label for="ingredients">Ingredient Name:</label>
+      <%= field.select(:ingredients, options_for_ingredients, {}, class: "form-control chosen") %>
+<% if false %>
+      <label for="quantity">Quantity:</label> 
+      <%= field.text_field :quantity, class: "form-control" %>
+
+      <label for="unit">Unit:</label>
+      <%= field.text_field :unit, class: "form-control" %>
+<% end %>
+
   </div>
+
   <div class="form-group row">
     <%= field.submit "Create" %>
   </div>
