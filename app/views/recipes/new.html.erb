@@ -6,21 +6,28 @@
   </div>
 
   <h3>Ingredients</h3>
-  <div class="form-group row">
+  <div id="ingredient-rows">
+    <div class="form-group row ingredient-row" id="ingredient1">
 
-      <label for="ingredients">Ingredient Name:</label>
-      <%= field.select(:ingredients, options_for_ingredients, {}, class: "form-control chosen") %>
-<% if false %>
-      <label for="quantity">Quantity:</label> 
-      <%= field.text_field :quantity, class: "form-control" %>
-
-      <label for="unit">Unit:</label>
-      <%= field.text_field :unit, class: "form-control" %>
-<% end %>
-
+      <%=field.fields_for :recipe_ingredient_joins, RecipeIngredientJoin.new do |i| %>
+        <div class="col">
+          <label for="ingredients">Ingredient Name:</label>
+          <%= i.select(:ingredient_id, options_for_ingredients, {}, class: "form-control chosen") %>
+        </div>
+        <div class="col">
+          <label for="quantity">Quantity:</label> 
+          <%= i.text_field :quantity, class: "form-control" %>
+        </div>
+        <div class="col">
+          <label for="unit">Unit:</label>
+          <%= i.text_field :unit, class: "form-control" %>    
+        </div>
+      <% end %>
+    </div>
   </div>
+  <ion-icon name="add-circle-outline" size="large" class="add-ingredient-btn btn"></ion-icon>
 
   <div class="form-group row">
-    <%= field.submit "Create" %>
+    <%= field.submit "Create", class: "btn btn-primary recipe-submit" %>
   </div>
 <% end %>

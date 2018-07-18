@@ -6,3 +6,13 @@
   padding: 2rem;
   padding-top: 1rem;
 }
+
+.ingredient-row {
+  background-color: #d5dae2;
+  padding: 2rem;
+  border-radius: 5px
+}
+
+.ingredient-row.form-control{
+  width: 25%
+}

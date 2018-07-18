@@ -19,5 +19,29 @@
 //= require chosen-jquery
 
 jQuery(function($){
-  $(".chosen").chosen();
+  // Customize certain select boxes with Chosen
+  //$(".chosen").chosen();
+
+  // Append divs to add multiple ingredients on recipe pages
+  $('.add-ingredient-btn').click(function(){
+    var lastRow = $('div[id^="ingredient"]:last');
+    var rowNumber = parseInt(lastRow.prop("id").match(/\d+/g), 10) +1;
+
+    var newRow = lastRow.clone(true);
+    newRow.prop('id', 'ingredient' + rowNumber);
+    newRow.find('input').val('');
+    //newRow.children('select').prop('id', 'recipe_recipe_ingredient_joins_attributes_' + rowNumber +'_ingredient_id_chosen');
+
+    if (rowNumber == 2){
+      newRow.append('<ion-icon name="close" size="small" class="remove-ingredient-btn btn"></ion-icon>')
+    }
+
+    lastRow.after(newRow);
+  })
+
+  // Remove appended divs on recipe pages
+  $('div[id^="ingredient"]').on("click", '.remove-ingredient-btn', function(){
+    $(this).parent('div[id^="ingredient"]').remove();
+  })
+
 })

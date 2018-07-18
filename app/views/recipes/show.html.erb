@@ -3,10 +3,18 @@
     <h1><%= @recipe.name %></h1>
     <div class="container-fluid bg-light recipe-ingredients rounded">
       <h3 style="padding: 1rem;">Ingredients</h3>
-      <ul class="list-group">
-        <% @recipe.ingredients.each do |ingredient| %>
-          <a href="/ingredients/<%= ingredient.id %>"><li class="list-group-item list-group-item-action"><%= ingredient.name %></li></a>
-        <% end %>
+        <table class="table table-hover" id="ing-table">
+          <tbody>
+            <% @recipe.ingredients.each do |ingredient| %>
+              <tr>
+                <th scope="row">
+                  <a href="/ingredients/<%= ingredient.id %>"><%= ingredient.name %></a>
+                </th>
+                <td>amount unit</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </ul>
     </div>
   </div>

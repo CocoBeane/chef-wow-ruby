@@ -67,3 +67,24 @@ body {
     height: 15vw;
     object-fit: cover;
 }
+
+.ingredient-row {
+  border-width: 2px;
+  border-color: grey;
+}
+
+.add-ingredient-btn {
+  float: right;
+}
+
+.recipe-submit {
+  margin-top: 2rem; 
+}
+
+#ing-table th{
+  text-align: left;
+}
+
+#ing-table td{
+  text-align: right;
+}

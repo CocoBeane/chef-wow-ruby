@@ -7,10 +7,11 @@ include RecipesHelper
 
   def new
     @recipe = Recipe.new
+    @recipe.recipe_ingredient_joins.build
   end
 
   def create
-    @recipe = Recipe.new(creation_params)
+    @recipe = Recipe.new(recipe_params)
     if @recipe.save
       flash[:success] = "Recipe saved"
       redirect_to recipe_path(@recipe)
@@ -47,7 +48,8 @@ include RecipesHelper
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, ingredients:[])
+    params.require(:recipe).permit(:name, 
+      recipe_ingredient_joins_attributes:[:ingredient_id, :quantity, :unit])
   end
 
 end
