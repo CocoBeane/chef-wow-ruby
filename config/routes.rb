@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get  '/signup',  to: 'users#new'
+
   get 'ingredients' => 'ingredients#index', as: :ingredients
   get 'ingredients/new'
   post 'ingredients/create'

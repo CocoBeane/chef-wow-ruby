@@ -30,7 +30,6 @@ jQuery(function($){
     var newRow = lastRow.clone(true);
     newRow.prop('id', 'ingredient' + rowNumber);
     newRow.find('input').val('');
-    //newRow.children('select').prop('id', 'recipe_recipe_ingredient_joins_attributes_' + rowNumber +'_ingredient_id_chosen');
 
     if (rowNumber == 2){
       newRow.append('<ion-icon name="close" size="small" class="remove-ingredient-btn btn"></ion-icon>')
