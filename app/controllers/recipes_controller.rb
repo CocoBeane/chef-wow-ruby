@@ -47,9 +47,9 @@ include RecipesHelper
 
   private
 
-  def recipe_params
-    params.require(:recipe).permit(:name, 
-      recipe_ingredient_joins_attributes:[:ingredient_id, :quantity, :unit])
-  end
+    def recipe_params
+      params.require(:recipe).permit(:name, 
+        recipe_ingredient_joins_attributes:[:ingredient_id, :quantity, :unit])
+    end
 
 end
