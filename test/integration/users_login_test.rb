@@ -27,6 +27,20 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", user_path(@user)
   end
 
+  test "login with valid information followed by logout" do
+    get login_path
+    post login_path, params: { session: { email:    @user.email,
+                                          password: '123456' } }
+    assert is_logged_in?
+    assert_redirected_to @user
+    follow_redirect!
+    delete logout_path
+    assert_not is_logged_in?
+    assert_redirected_to login_path
+    follow_redirect!
+    assert_select "a[href=?]", login_path
+  end
+
   test "new ingredient path only shows if logged in" do
     get login_path
     assert_select "a[href=?]", 'ingredients/new', count: 0
