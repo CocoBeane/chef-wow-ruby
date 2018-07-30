@@ -27,22 +27,36 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="./ingredients" id="ingredients-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
             <div class="dropdown-menu" aria-labelledby="ingredients-dropdown">
+              <% if logged_in? %>
               <a class="dropdown-item" href="/ingredients/new">Create New</a>
+              <% end %>
               <a class="dropdown-item" href="/ingredients">Browse All</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="./recipes" id="recipes-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipes</a>
             <div class="dropdown-menu" aria-labelledby="recipes-dropdown">
+              <% if logged_in? %>
               <a class="dropdown-item" href="/recipes/new">Create New</a>
+              <% end %>
               <a class="dropdown-item" href="/recipes">Browse All</a>
             </div>
           </li>
         </ul>
         <ul class="user-menu">
-          <li class="nav-item">
+          <% if logged_in? %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+              <div class="dropdown-menu" aria-labelledby="recipes-dropdown">
+                <%= link_to "Profile", current_user, class: "dropdown-item" %>
+                <%= link_to "Log Out", logout_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
             <%= link_to "Log In", login_path, class: "nav-link btn btn-primary" %>
           </li>
+          <% end %>
         </ul>
       </div>
     </nav>

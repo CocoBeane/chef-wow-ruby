@@ -1,16 +1,23 @@
-<h1>Create New Ingredient</h1>
+<% if logged_in? %>
+  <h1>Create New Ingredient</h1>
 
-<%= form_for @ingredient, url: {action: "create"}, html: {class: "form"} do |field| %>
-  <div class="form-group row">
-    <label for="ingredient_name">Name:</label> <%= field.text_field :name, class: "form-control" %>
-  </div>
-   <div class="form-group row"> 
-    <label for="ingredient_image_url">Image URL:</label> <%= field.text_field :image_url, class: "form-control" %>
-  </div>
-  <div class="form-group row">
-    <label for="ingredient_description">Description:</label> <%= field.text_area :description, size: "60x12", class: "form-control" %>
-  </div>
-  <div class="form-group row"> 
-    <%= field.submit "Create", class: "btn btn-primary" %>
+  <%= form_for @ingredient, url: {action: "create"}, html: {class: "form"} do |field| %>
+    <div class="form-group row">
+      <label for="ingredient_name">Name:</label> <%= field.text_field :name, class: "form-control" %>
+    </div>
+     <div class="form-group row"> 
+      <label for="ingredient_image_url">Image URL:</label> <%= field.text_field :image_url, class: "form-control" %>
+    </div>
+    <div class="form-group row">
+      <label for="ingredient_description">Description:</label> <%= field.text_area :description, size: "60x12", class: "form-control" %>
+    </div>
+    <div class="form-group row"> 
+      <%= field.submit "Create", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="alert-danger">
+    <p>You must be logged in to access this page!</p>
+    <p><a href="/login">Log in</a> or <a href="/signup">sign up</a></p>
   </div>
 <% end %>
