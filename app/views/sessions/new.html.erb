@@ -11,6 +11,12 @@
     <%= f.password_field :password, class: "form-control" %>
   </div>
   <div class="form-group row">
+    <%= f.label :remember_me, class: "checkbox inline" do %>
+    <%= f.check_box :remember_me %>
+    Remember me on this computer
+    <% end %>
+  </div>
+  <div class="form-group row">
     <%= f.submit "Log In", class: "btn btn-primary" %>
   </div>
 

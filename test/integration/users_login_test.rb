@@ -37,6 +37,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     delete logout_path
     assert_not is_logged_in?
     assert_redirected_to login_path
+    delete logout_path
     follow_redirect!
     assert_select "a[href=?]", login_path
   end
@@ -81,6 +82,17 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     get '/recipes/new'                                    
     assert_select "form"
     assert_select "div.alert-danger", false
+  end
+
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1')
+    assert_not_empty cookies['remember_token'] 
+  end
+
+  test "login without remembering" do
+    log_in_as(@user, remember_me: '1')
+    log_in_as(@user, remember_me: '0')
+    assert_empty cookies['remember_token']
   end
 
 end
