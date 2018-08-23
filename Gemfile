@@ -34,7 +34,7 @@ gem 'chosen-rails'
 gem 'bcrypt', '3.1.12'
 
 group :production do
-  gem 'pg', '~> 0.20.0'
+  gem 'pg', '0.20.0'
 end
 
 group :development, :test do
