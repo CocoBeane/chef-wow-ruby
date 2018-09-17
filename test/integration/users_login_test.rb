@@ -84,6 +84,17 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "div.alert-danger", false
   end
 
+  test "user menu and index only accessible if logged in" do
+    get users_path
+    assert_redirected_to login_path
+    assert_select "a[href=?]", '/users', count: 0
+    post login_path, params: { session: { email:    @user.email,
+                                          password: '123456' } }
+    follow_redirect!                                  
+    assert_select "a[href=?]", '/users'
+    get users_path
+  end
+
   test "login with remembering" do
     log_in_as(@user, remember_me: '1')
     assert_not_empty cookies['remember_token'] 

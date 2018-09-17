@@ -1,7 +1,9 @@
 <% provide(:title, @user.name) %>
 <ul class="nav nav-tabs">
-  <li class="nav-item"><%= link_to "Favorite Recipes", edit_user_path(current_user), class: "nav-link" %></li>
-  <li class="nav-item"><%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link" %></li>
+  <li class="nav-item"><%= link_to "Favorite Recipes", root_url, class: "nav-link" %></li>
+  <% if current_user?(@user) %>
+    <li class="nav-item"><%= link_to "Edit Profile", edit_user_path(@user), class: "nav-link" %></li>
+  <% end %>
 </ul>
 
 <div class="row">

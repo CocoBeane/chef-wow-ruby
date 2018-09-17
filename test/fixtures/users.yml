@@ -9,3 +9,10 @@ bob:
   name: Bob Ross
   email: bross@pbs.org
   password_digest: <%= User.digest('luv2paint') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>

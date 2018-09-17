@@ -42,6 +42,14 @@
               <a class="dropdown-item" href="/recipes">Browse All</a>
             </div>
           </li>
+          <% if logged_in? %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="./users" id="users-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chefs</a>
+              <div class="dropdown-menu" aria-labelledby="users-dropdown">
+                <a class="dropdown-item" href="/users">All Chefs</a>
+              </div>
+            </li>
+          <% end %>
         </ul>
         <ul class="user-menu">
           <% if logged_in? %>

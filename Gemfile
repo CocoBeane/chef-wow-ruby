@@ -32,6 +32,8 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'chosen-rails'
 gem 'bcrypt', '3.1.12'
+gem 'will_paginate', '3.1.6'
+gem 'bootstrap-will_paginate'
 
 group :production do
   gem 'pg', '0.20.0'
@@ -46,6 +48,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'rails-controller-testing'
+  gem 'faker', '1.7.3'
 end
 
 group :development do
