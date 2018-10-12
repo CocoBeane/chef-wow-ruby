@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  resources :users
 
   get 'ingredients' => 'ingredients#index', as: :ingredients
   get 'ingredients/new'
@@ -24,4 +23,7 @@ Rails.application.routes.draw do
   get '/recipes/:id/edit', to: 'recipes#edit'
   patch '/recipes/:id/update', to: 'recipes#update'
   delete '/recipes/:id', to: 'recipes#destroy'
+
+  resources :users
+  resources :account_activations, only: [:edit]
 end
